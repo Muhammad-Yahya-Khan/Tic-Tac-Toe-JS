@@ -12,6 +12,13 @@
     top: 20vh;
 }
 
+.player {
+  margin: 0 80px;
+  font-family: sans-serif;
+  font-size: 32px;
+}
+
+
 .main-box {
     display:flex;
     justify-content: center;
