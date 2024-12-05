@@ -30,20 +30,24 @@ function checkForWin(sign) {
 
 var count = 0;
 var valueTobeWritten;
+var isWon = false;
 
 function onClick(boxNumber) {
-  var box = document.getElementById(boxNumber);
+  if (!isWon) {
+    var box = document.getElementById(boxNumber);
 
-  if (!isEven(count)) valueTobeWritten = "O";
-  else if (isEven(count)) valueTobeWritten = "X";
+    if (!isEven(count)) valueTobeWritten = "O";
+    else if (isEven(count)) valueTobeWritten = "X";
 
-  if (box.innerHTML == "") {
-    box.innerHTML = valueTobeWritten;
-    count++;
-  }
+    if (box.innerHTML == "") {
+      box.innerHTML = valueTobeWritten;
+      count++;
+    }
 
-  if (checkForWin(valueTobeWritten)) {
-    if (valueTobeWritten === "O") alert("Player 1 Won");
-    else alert("Player 2 Won");
+    if (checkForWin(valueTobeWritten)) {
+      if (valueTobeWritten === "O") alert("Player 1 Won");
+      else alert("Player 2 Won");
+      isWon = true;
+    }
   }
 }
